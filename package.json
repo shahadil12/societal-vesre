@@ -1,0 +1,38 @@
+{
+  "name": "societal-verse",
+  "version": "1.0.0",
+  "description": "Social networking site for staying connected with friends and family",
+  "main": "server.js",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "preserve": "npm run build",
+    "serve": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q build/server.js\"",
+    "prestart": "npm run build",
+    "start": "cross-env NODE_ENV=production node build/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Social",
+    "networking",
+    "societal",
+    "verse"
+  ],
+  "author": "Adil Shah",
+  "license": "ISC",
+  "dependencies": {
+    "@types/body-parser": "^1.19.2",
+    "body-parser": "^1.20.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.7",
+    "concurrently": "^7.5.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  }
+}
